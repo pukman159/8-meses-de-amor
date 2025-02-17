@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feliz 8 Meses 💖</title>
+    
+    <!-- Estilos de Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    
+    <!-- Tus estilos personalizados -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,15 +20,14 @@
         h1 {
             color: #e91e63;
         }
-        .fotos {
-            margin-top: 20px;
+        .carrusel {
+            width: 80%;
+            margin: 0 auto;
         }
-        .fotos img {
-            max-width: 100%;
+        .carrusel img {
+            width: 100%;
             height: auto;
-            margin: 10px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -44,11 +49,31 @@
     </p>
     DE: Domingo Palacios
     </p>
-    <div class="fotos">
-        <h2>Unas de nuestros primeros recuerdos</h2>
-        <img src="WhatsApp Image 2025-02-17 at 2.07.11 PM.jpeg" alt="Foto 1">
-        <img src="WhatsApp Image 2025-02-17 at 2.07.12 PM (1).jpeg" alt="Foto 2">
-        <img src="WhatsApp Image 2025-02-17 at 2.07.12 PM.jpeg" alt="Foto 3">
+    
+    <!-- Carrusel de fotos -->
+    <div class="carrusel">
+        <div><img src="WhatsApp Image 2025-02-17 at 2.07.11 PM.jpeg" alt="Foto 1"></div>
+        <div><img src="WhatsApp Image 2025-02-17 at 2.07.12 PM (1).jpeg" alt="Foto 2"></div>
+        <div><img src="WhatsApp Image 2025-02-17 at 2.07.12 PM.jpeg" alt="Foto 3"></div>
     </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Slick Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+    <!-- Inicialización del carrusel -->
+    <script>
+        $(document).ready(function(){
+            $('.carrusel').slick({
+                dots: true,            // Muestra puntos de navegación
+                infinite: true,        // Permite desplazamiento infinito
+                speed: 300,            // Velocidad de transición
+                slidesToShow: 1,       // Muestra una imagen a la vez
+                adaptiveHeight: true   // Ajusta la altura automáticamente
+            });
+        });
+    </script>
 </body>
 </html>
