@@ -73,13 +73,16 @@
         Llevamos juntos: <span id="dias">0</span> días, <span id="horas">0</span> horas y <span id="minutos">0</span> minutos.
     </div>
 
-   <!-- Reproductor de música -->
-    <div style="margin-top: 20px;">
-        <audio controls autoplay loop>
-            <source src="musica/WhatsApp Audio 2025-02-17 at 4.05.06 PM.mpeg" type="audio/mpeg">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-    </div>
+<!-- Reproductor de música de fondo (oculto) -->
+    <audio id="musicaFondo" autoplay loop>
+        <source src="musica/WhatsApp Audio 2025-02-17 at 4.05.06 PM.mpeg" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Botón para controlar la música -->
+    <button id="botonMusica" style="margin-top: 20px; padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        🔈 Detener música
+    </button>
 
     <!-- Carrusel de fotos -->
     <div class="carrusel">
@@ -144,6 +147,28 @@
         // Actualiza el contador cada minuto
         setInterval(actualizarContador, 60000);
         actualizarContador(); // Ejecuta la función al cargar la página
+    </script>
+
+       <!-- Script para controlar la música de fondo -->
+    <script>
+        const musicaFondo = document.getElementById('musicaFondo');
+        const botonMusica = document.getElementById('botonMusica');
+
+        // Cambia el texto del botón y controla la música
+        botonMusica.addEventListener('click', function() {
+            if (musicaFondo.paused) {
+                musicaFondo.play();
+                botonMusica.textContent = '🔈 Detener música';
+            } else {
+                musicaFondo.pause();
+                botonMusica.textContent = '🔊 Reproducir música';
+            }
+        });
+
+        // Intenta reproducir la música automáticamente (puede no funcionar en algunos navegadores)
+        document.addEventListener('click', function() {
+            musicaFondo.play();
+        });
     </script>
 </body>
 </html>
