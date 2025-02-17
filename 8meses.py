@@ -22,7 +22,7 @@ def mostrar_fotos():
     fotos = [
         "WhatsApp Image 2025-02-17 at 2.07.11 PM.jpeg",
         "WhatsApp Image 2025-02-17 at 2.07.12 PM (1).jpeg",
-        ""
+        "WhatsApp Image 2025-02-17 at 2.07.12 PM.jpeg"
     ]
     print("\nAlgunos de nuestros mejores recuerdos juntos:")
     for foto in fotos:
