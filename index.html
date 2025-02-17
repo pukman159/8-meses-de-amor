@@ -29,6 +29,19 @@
             height: auto;
             border-radius: 10px;
         }
+        #botonSorpresa {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #botonSorpresa:hover {
+            background-color: #c2185b;
+        }
     </style>
 </head>
 <body>
@@ -49,13 +62,20 @@
     </p>
     DE: Domingo Palacios
     </p>
-    
+
+
     <!-- Carrusel de fotos -->
     <div class="carrusel">
-        <div><img src="WhatsApp Image 2025-02-17 at 2.07.11 PM.jpeg" alt="Foto 1"></div>
-        <div><img src="WhatsApp Image 2025-02-17 at 2.07.12 PM (1).jpeg" alt="Foto 2"></div>
-        <div><img src="WhatsApp Image 2025-02-17 at 2.07.12 PM.jpeg" alt="Foto 3"></div>
+        <h2>Unas de nuestros primeros recuerdos</h2>
+        <div><img src="fotos/foto1.jpg" alt="Foto 1"></div>
+        <div><img src="fotos/foto2.jpg" alt="Foto 2"></div>
+        <div><img src="fotos/foto3.jpg" alt="Foto 3"></div>
     </div>
+
+    <!-- Botón sorpresa -->
+    <button id="botonSorpresa">
+        ¡Haz clic para una sorpresa! 💖
+    </button>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -73,6 +93,13 @@
                 slidesToShow: 1,       // Muestra una imagen a la vez
                 adaptiveHeight: true   // Ajusta la altura automáticamente
             });
+        });
+    </script>
+
+    <!-- Script para el botón sorpresa -->
+    <script>
+        document.getElementById('botonSorpresa').addEventListener('click', function() {
+            alert('¡Eres lo mejor que me ha pasado mi engreida hermosa! 💖');
         });
     </script>
 </body>
