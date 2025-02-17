@@ -20,7 +20,7 @@ def mostrar_mensaje_especial():
 def mostrar_fotos():
     # Aquí puedes agregar enlaces a fotos o recuerdos que hayas subido al repositorio
     fotos = [
-        "https://ejemplo.com/foto1.jpg",
+        "WhatsApp Image 2025-02-17 at 2.07.11 PM.jpeg",
         "https://ejemplo.com/foto2.jpg",
         "https://ejemplo.com/foto3.jpg"
     ]
