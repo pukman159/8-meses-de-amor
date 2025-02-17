@@ -42,10 +42,15 @@
         #botonSorpresa:hover {
             background-color: #c2185b;
         }
+        #contador {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #e91e63;
+        }
     </style>
 </head>
 <body>
-    <h1>¡Feliz 8 meses, mi niña Cecilia Pari! 💖</h1>
+   <h1>¡Feliz 8 meses, mi niña Cecilia Pari! 💖</h1>
     <p>
     Estos 8 meses han sido los mejores de mi vida gracias a ti.
     Cada día a tu lado es un regalo que atesoro con todo mi corazón.
@@ -63,6 +68,10 @@
     DE: Domingo Palacios
     </p>
 
+    <!-- Contador de tiempo juntos -->
+    <div id="contador">
+        Llevamos juntos: <span id="dias">0</span> días, <span id="horas">0</span> horas y <span id="minutos">0</span> minutos.
+    </div>
 
     <!-- Carrusel de fotos -->
     <div class="carrusel">
@@ -101,6 +110,32 @@
         document.getElementById('botonSorpresa').addEventListener('click', function() {
             alert('¡Eres lo mejor que me ha pasado mi engreida hermosa, nosotros = "1 corintios 13:4-7"! 💖');
         });
+    </script>
+
+    <!-- Script para el contador de tiempo juntos -->
+    <script>
+        const fechaInicio = new Date('2024-06-17'); // Cambia esta fecha por la de tu relación
+        const contador = document.getElementById('contador');
+        const diasElement = document.getElementById('dias');
+        const horasElement = document.getElementById('horas');
+        const minutosElement = document.getElementById('minutos');
+
+        function actualizarContador() {
+            const ahora = new Date();
+            const diferencia = ahora - fechaInicio;
+
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+
+            diasElement.textContent = dias;
+            horasElement.textContent = horas;
+            minutosElement.textContent = minutos;
+        }
+
+        // Actualiza el contador cada minuto
+        setInterval(actualizarContador, 60000);
+        actualizarContador(); // Ejecuta la función al cargar la página
     </script>
 </body>
 </html>
